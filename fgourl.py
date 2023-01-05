@@ -4,6 +4,8 @@ import requests
 import version
 import main
 import CatAndMouseGame
+import mytime
+
 
 requests.urllib3.disable_warnings()
 session = requests.Session()
@@ -56,6 +58,23 @@ def get_folder_data(assetbundle):
     asset_bundle_folder_ = assetbundle['folderName']
     data_server_folder_crc_ = binascii.crc32(
         assetbundle['folderName'].encode('utf8'))
+
+# ===== End =====
+
+# ===== Telegram arguments =====
+TelegramBotToken = ''
+TelegramAdminId = ''
+
+
+def SendMessageToAdmin(message):
+    if TelegramBotToken != 'nullvalue':
+        nowtime = mytime.GetFormattedNowTime()
+        url = f'https://api.telegram.org/bot{TelegramBotToken}/sendMessage?chat_id={TelegramAdminId}&parse_mode=markdown&text=_{nowtime}_\n{message}'
+        result = json.loads(requests.get(url, verify=False).text)
+        if not result['ok']:
+            print(result)
+            print(message)
+
 
 # ===== End =====
 
