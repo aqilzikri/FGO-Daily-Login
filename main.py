@@ -13,6 +13,8 @@ authKeys = os.environ['authKeys'].split(',')
 secretKeys = os.environ['secretKeys'].split(',')
 fate_region = os.environ['fateRegion']
 webhook_discord_url = os.environ['webhookDiscord']
+fgourl.TelegramBotToken = os.environ['TGBotToken']
+fgourl.TelegramAdminId = os.environ['TGAdminId']
 UA = os.environ['UserAgent']
 
 if UA != 'nullvalue':
