@@ -26,11 +26,16 @@ def topLogin(data: list) -> None:
         "content": None,
         "embeds": [
             {
-                "id": "User -" + login.name,
+                
                 "title": "FGO Daily Bonus - " + main.fate_region,
                 "description": f"Daily Login Fate/Grand Order.\n\n{messageBonus}",
                 "color": 563455,
                 "fields": [
+                    {
+                        "name": "Name",
+                        "value": f"{login.name}",
+                        "inline": True
+                    },
                     {
                         "name": "Level",
                         "value": f"{rewards.level}",
