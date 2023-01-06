@@ -5,7 +5,7 @@ import fgourl
 
 
 def topLogin(data: list) -> None:
-    endpoint = main.webhook_discord_url,fgourl.SendMessageToAdmin
+    endpoint = main.webhook_discord_url
 
     rewards: user.Rewards = data[0]
     login: user.Login = data[1]
