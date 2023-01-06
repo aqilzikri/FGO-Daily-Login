@@ -76,7 +76,8 @@ class Rewards:
 
 
 class Login:
-    def __init__(self, name, login_days, total_days, act_max, act_recover_at, now_act, add_fp, total_fp):
+    def __init__(self, name, uid: str, login_days, total_days, act_max, act_recover_at, now_act, add_fp, total_fp):
+        self.uid_ = uid
         self.name = name
         self.login_days = login_days
         self.total_days = total_days
