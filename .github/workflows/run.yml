@@ -27,6 +27,7 @@ jobs:
       - name: Execute main script
         run: |
           python3 main.py
+          
         env:
           userIds: ${{ secrets.GAME_USERIDS }}
           authKeys: ${{ secrets.GAME_AUTHKEYS }}
@@ -36,3 +37,8 @@ jobs:
           webhookDiscord: ${{ secrets.DISCORD_WEBHOOK }}
           TGBotToken: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TGAdminId: ${{ secrets.TELEGRAM_ADMIN_ID }}
+
+      - name: Keepalive Workflow
+        uses: gautamkrishnar/keepalive-workflow@1.1.0
+            
+
